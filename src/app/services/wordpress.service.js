@@ -13,7 +13,8 @@
 
     return {
       getSiteInformation: getSiteInformation,
-      getPageInformation: getPageInformation
+      getPageInformation: getPageInformation,
+      getMenu: getMenu
     };
 
     function getSiteInformation() {
@@ -45,6 +46,26 @@
           return $q.reject({message: 'Unable to get information for the page ' + wordpressSlug, details: response.data});
         });
 
+    }
+
+    function getMenu(menuId) {
+      return $http.get(apiHost + '/wp-api-menus/v2/menus')
+        .then(function (response){
+          var menus = response.data;
+          return _.find(menus, function(item){
+            return item.slug === menuId;
+          });
+        })
+        .then(function (menu) {
+          var id = menu.term_id;
+          return $http.get(apiHost + '/wp-api-menus/v2/menus/' + id);
+        })
+        .then(function (response) {
+          return response.data;
+        })
+        .catch(function (response) {
+          return $q.reject({message: 'Unable to get information for the page ' + menuId, details: response.data});
+        });
     }
   }
 })();

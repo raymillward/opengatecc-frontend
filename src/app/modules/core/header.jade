@@ -1,0 +1,51 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      span
+        a.navbar-brand-small(href='/')
+          h4 WCC
+        h6 part of oxford community churches
+    #navbar.navbar-collapse.collapse.pull-right
+      ul.nav.navbar-nav
+        li
+          a(href='/feed') My News Feed
+        li
+          a(href='/statistics') Statistics
+.row.site-title
+    .col-xs-12.col-sm-8
+      h1(ng-bind='vm.name')
+      h2 A church on the move
+    .col-xs-12.col-sm-4
+      img(src="/assets/images/water-drop.png")
+
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    a.navbar-brand(href="#") Home
+
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav
+        li.dropdown
+          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Dropdown
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href="#") Action
+              a(href="#") Another Action
+
+        li.dropdown(ng-repeat="menuItem in vm.mainMenu")
+          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}}
+          ul.dropdown-menu
+            li(ng-repeat="childItem in menuItem.children") #[a(href="#") {{childItem.name}}]
+
+
