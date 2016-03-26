@@ -40,7 +40,8 @@
     function buildMenuItem(item) {
       var convertedItem = {
         name: item.title,
-        id: item.id
+        id: item.id,
+        object: item.object
       };
 
       if (item.children !== undefined && item.children.length > 0) {

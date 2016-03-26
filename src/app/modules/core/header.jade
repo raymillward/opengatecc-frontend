@@ -1,21 +1,11 @@
 nav.navbar.navbar-default.navbar-fixed-top
   .container
     .navbar-header
-      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
       span
         a.navbar-brand-small(href='/')
-          h4 WCC
+          h4 WCC &nbsp;
         h6 part of oxford community churches
-    #navbar.navbar-collapse.collapse.pull-right
-      ul.nav.navbar-nav
-        li
-          a(href='/feed') My News Feed
-        li
-          a(href='/statistics') Statistics
+
 .row.site-title
     .col-xs-12.col-sm-8
       h1(ng-bind='vm.name')
@@ -35,16 +25,9 @@ nav.navbar.navbar-default
 
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
-        li.dropdown
-          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Dropdown
-            span.caret
-          ul.dropdown-menu
-            li
-              a(href="#") Action
-              a(href="#") Another Action
-
         li.dropdown(ng-repeat="menuItem in vm.mainMenu")
-          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}}
+          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}} &nbsp;
+            span.caret
           ul.dropdown-menu
             li(ng-repeat="childItem in menuItem.children") #[a(href="#") {{childItem.name}}]
 
