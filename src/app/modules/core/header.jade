@@ -26,9 +26,9 @@ nav.navbar.navbar-default
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
         li.dropdown(ng-repeat="menuItem in vm.mainMenu")
-          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}} &nbsp;
+          a.dropdown-toggle(ng-href="{{item.link}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}} &nbsp;
             span.caret
           ul.dropdown-menu
-            li(ng-repeat="childItem in menuItem.children") #[a(href="#") {{childItem.name}}]
+            li(ng-repeat="childItem in menuItem.children") #[a(ng-href="{{childItem.link}}") {{childItem.name}}]
 
 

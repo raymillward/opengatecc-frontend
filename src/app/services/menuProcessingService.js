@@ -41,7 +41,8 @@
       var convertedItem = {
         name: item.title,
         id: item.id,
-        object: item.object
+        object: item.object,
+        link: buildMenuItemLink(item)
       };
 
       if (item.children !== undefined && item.children.length > 0) {
@@ -54,6 +55,16 @@
       }
 
       return convertedItem;
+    }
+
+    function buildMenuItemLink(item) {
+      var link = "";
+
+      if (item.object === 'page') {
+        link = '/pages/' + item.title.toLowerCase().replace(" ","-") + "?id=" + item.id;
+      }
+
+      return link;
     }
   }
 })();
