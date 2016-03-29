@@ -3,17 +3,15 @@
 
   angular
     .module('website')
-    .controller('FrontpageController', FrontpageController);
+    .controller('PageController', PageController);
 
-  FrontpageController.$inject = ['$route', 'wordpressService','menuProcessingService'];
-  function FrontpageController($route, wordpressService, menuProcessingService) {
+  PageController.$inject = ['$routeParams', 'wordpressService','menuProcessingService'];
+  function PageController($routeParams, wordpressService, menuProcessingService) {
     var vm = this;
 
     activate();
 
     function activate() {
-
-      console.log($route.routes);
 
       wordpressService.getSiteInformation()
         .then(function(data) {
@@ -32,6 +30,7 @@
           vm.pageContent = data.content.rendered;
         })
         .catch(onError);
+
     }
 
     function onError(error) {

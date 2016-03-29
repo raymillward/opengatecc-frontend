@@ -14,7 +14,8 @@
     return {
       getSiteInformation: getSiteInformation,
       getPageInformation: getPageInformation,
-      getMenu: getMenu
+      getMenu: getMenu,
+      getAllPages: getAllPages
     };
 
     function getSiteInformation() {
@@ -24,6 +25,16 @@
         })
         .catch(function (response) {
           return $q.reject({message: 'Unable to get site information', details: response.data});
+        });
+    }
+
+    function getAllPages() {
+      return $http.get(wordpressRestApi + '/pages')
+        .then(function (response) {
+          return response.data;
+        })
+        .catch(function (response) {
+          return $q.reject({message: 'Unable to get information for the page ' + wordpressSlug, details: response.data});
         });
     }
 

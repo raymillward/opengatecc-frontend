@@ -9,11 +9,11 @@
 
   function routeConfig($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'app/modules/frontpage/frontpage.html',
-        controller: 'FrontpageController',
+      .when('/pages/:pageslug', {
+        templateUrl: 'app/modules/pages/pages.html',
+        controller: 'PageController',
         controllerAs: 'vm'
       });
   }
 
-})();
+}());
