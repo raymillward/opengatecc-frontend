@@ -1,4 +1,4 @@
-nav.navbar.navbar-default.navbar-fixed-top
+nav.navbar.navbar-default.navbar-fixed-top#topbar
   .container
     .navbar-header
       span
@@ -11,7 +11,7 @@ nav.navbar.navbar-default.navbar-fixed-top
       h1(ng-bind='vm.name')
       h2 A church on the move
     .col-xs-12.col-sm-4
-      img(src="/assets/images/water-drop.png")
+      img(ng-src='{{vm.siteLogo}}')
 
 nav.navbar.navbar-default
   .container-fluid
@@ -21,10 +21,12 @@ nav.navbar.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-    a.navbar-brand(href="/") Home
+
 
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav
+        li
+          a.navbar-brand(href="/") Home
         li.dropdown(ng-repeat="menuItem in vm.mainMenu")
           a.dropdown-toggle(ng-href="{{item.link}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}} &nbsp;
             span.caret
