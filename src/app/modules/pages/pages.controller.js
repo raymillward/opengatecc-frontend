@@ -25,7 +25,7 @@
         })
         .catch(onError);
 
-      wordpressService.getPageInformation('frontpage')
+      wordpressService.getPageInformation($routeParams.pageslug)
         .then(function(data) {
           vm.pageContent = data.content.rendered;
         })
