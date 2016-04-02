@@ -1,36 +1,37 @@
-nav.navbar.navbar-default.navbar-fixed-top#topbar
-  .container
-    .navbar-header
-      span
-        a.navbar-brand-small(href='/')
-          h4 WCC &nbsp;
-        h6 part of oxford community churches
+.header
+  nav.navbar.navbar-default.navbar-fixed-top#topbar
+    .container
+      .navbar-header
+        span
+          a.navbar-brand-small(href='/')
+            h4 WCC &nbsp;
+          h6 part of oxford community churches
 
-.row.site-title
-    .col-xs-12.col-sm-8
-      h1(ng-bind='vm.name')
-      h2 A church on the move
-    .col-xs-12.col-sm-4
-      img(ng-src='{{vm.siteLogo}}')
+  .row.site-title
+      .col-xs-12.col-sm-8
+        h1(ng-bind='vm.name')
+        h2 A church on the move
+      .col-xs-12.col-sm-4
+        img#siteLogo(ng-src='{{vm.siteLogo}}')
 
-nav.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
 
 
-    .collapse.navbar-collapse#bs-example-navbar-collapse-1
-      ul.nav.navbar-nav
-        li
-          a.navbar-brand(href="/") Home
-        li.dropdown(ng-repeat="menuItem in vm.mainMenu")
-          a.dropdown-toggle(ng-href="{{item.link}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}} &nbsp;
-            span.caret
-          ul.dropdown-menu
-            li(ng-repeat="childItem in menuItem.children") #[a(ng-href="{{childItem.link}}") {{childItem.name}}]
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        ul.nav.navbar-nav
+          li
+            a.navbar-brand(href="/") Home
+          li.dropdown(ng-repeat="menuItem in vm.mainMenu")
+            a.dropdown-toggle(ng-href="{{item.link}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") {{menuItem.name}} &nbsp;
+              span.caret
+            ul.dropdown-menu
+              li(ng-repeat="childItem in menuItem.children") #[a(ng-href="{{childItem.link}}") {{childItem.name}}]
 
 

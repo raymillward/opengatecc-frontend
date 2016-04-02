@@ -1,25 +1,36 @@
 div(ng-include src="'app/modules/core/header.html'")
 .container
   .row
-    div(ng-bind-html='vm.pageContent')
+    .col-xs-12
+      div(ng-bind-html='vm.pageContent')
   .row
-    h2 Our core values...
+    .col-xs-12
+      h2 Our core values...
   .row
     .col-sm-4
       .key-message
-        img.img-circle(src="/assets/images/hands-cropped.jpg")
-        h2 A home for all
+        .row
+          .col-sm-12.col-xs-3
+            img.img-circle(src="/assets/images/hands-cropped.jpg")
+          .col-sm-12.col-xs-9
+            h2 A home for all
     .col-sm-4
       .key-message
-        img.img-circle(src="/assets/images/trees-cropped.jpg")
-        h2 A family for discipleship
+        .row
+          .col-sm-12.col-xs-3
+            img.img-circle(src="/assets/images/trees-cropped.jpg")
+          .col-sm-12.col-xs-9
+            h2 A family for discipleship
     .col-sm-4
       .key-message
-        img.img-circle(src="/assets/images/sunshine-cropped.jpg")
-        h2 A base for sending
+        .row
+          .col-sm-12.col-xs-3
+            img.img-circle(src="/assets/images/sunshine-cropped.jpg")
+          .col-sm-12.col-xs-9
+            h2 A base for sending
   .row
     .col-sm-4
-      img(src="/assets/images/hands-cropped.jpg")
+      img.non-mobile-image(src="/assets/images/hands-cropped.jpg")
     .col-sm-8
       h3 A home for all
       p Jesus went out of his way to be for everybody. He was accused by the religious leaders of the time of spending his time with those who were lost morally, financially or spiritually. His response was that the sick needed doctors! He also spent time with the religious and the wise. As a church, our vision is to be like Jesus: to be for all.
@@ -28,10 +39,10 @@ div(ng-include src="'app/modules/core/header.html'")
       h3 A family for discipleship
       p In the bible the word "Christian" is rarely used. Followers of Jesus are most often called disciples, because they understood that they were made by God with a intention, purpose and design. We have a vision for each person that they become who God made them to be, and that process is called discipleship. It's a about a loving call up to be the amazing person God created you to be.
     .col-sm-4
-      img(src="/assets/images/trees-cropped.jpg")
+      img.non-mobile-image(src="/assets/images/trees-cropped.jpg")
   .row
     .col-sm-4
-      img(src="/assets/images/sunshine-cropped.jpg")
+      img.non-mobile-image(src="/assets/images/sunshine-cropped.jpg")
     .col-sm-8
       h3 A base for sending
       p One of the great privileges of any church is to release people to the call God has on their lives. We love to have people "sent" locally, to see the God's love, power and salvation more known here and now. Equally, we love to send people to other places, near and far, short term and long term, to see God more known, where ever that may be!
