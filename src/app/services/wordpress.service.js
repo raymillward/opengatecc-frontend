@@ -15,7 +15,8 @@
       getSiteInformation: getSiteInformation,
       getPageInformation: getPageInformation,
       getMenu: getMenu,
-      getAllPages: getAllPages
+      getAllPages: getAllPages,
+      getAllMedia: getAllMedia
     };
 
     function getSiteInformation() {
@@ -34,7 +35,17 @@
           return response.data;
         })
         .catch(function (response) {
-          return $q.reject({message: 'Unable to get information for the page ' + wordpressSlug, details: response.data});
+          return $q.reject({message: 'Unable to get information for all the pages', details: response.data});
+        });
+    }
+
+    function getAllMedia() {
+      return $http.get(wordpressRestApi + '/media')
+        .then(function (response) {
+          return response.data;
+        })
+        .catch(function (response) {
+          return $q.reject({message: 'Unable to get information about the wordpress media', details: response.data});
         });
     }
 
